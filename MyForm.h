@@ -1,5 +1,5 @@
 #pragma once
-
+#include"Downlands.h"
 namespace Eng {
 
 	using namespace System;
@@ -22,7 +22,11 @@ namespace Eng {
 			//TODO: добавьте код конструктора
 			//
 		}
-
+		MyForm(Downlands^ parent) {
+			InitializeComponent();
+			parentForm = parent;
+		}
+	private: Downlands^ parentForm;
 	protected:
 		/// <summary>
 		/// Освободить все используемые ресурсы.
@@ -264,7 +268,6 @@ namespace Eng {
 			this->panelWindow->Name = L"panelWindow";
 			this->panelWindow->Size = System::Drawing::Size(1178, 849);
 			this->panelWindow->TabIndex = 3;
-			this->panelWindow->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::panelWindow_Paint);
 			// 
 			// MyForm
 			// 
@@ -310,8 +313,7 @@ private: System::Void buttonGrammar_Click(System::Object^ sender, System::EventA
 	if (!flagTap) { button2->Top += 180; buttonSong->Top += 180; buttonRatio->Top += 180; buttonTest->Top += 180; flagTap = true; buttonPastSimple->Visible = true; buttonFutSimple->Visible = true; buttonPrSimple->Visible = true; }
 	else{ button2->Top -= 180; buttonSong->Top -= 180; buttonRatio->Top -= 180; buttonTest->Top -= 180; flagTap = false; buttonPastSimple->Visible = false; buttonFutSimple->Visible = false; buttonPrSimple->Visible = false;	}
 }
-private: System::Void panelWindow_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
+
 private: System::Void button2_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	button2->BackColor = Color::FromArgb(104, 181, 211);
 	button2->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
