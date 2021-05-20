@@ -47,7 +47,8 @@ namespace Eng {
 
 	private: System::Windows::Forms::Panel^ panelTop;
 	private: System::Windows::Forms::Panel^ panelWindow;
-	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ buttonVocab;
+
 	private: System::Windows::Forms::Button^ buttonPastSimple;
 	private: System::Windows::Forms::Button^ buttonFutSimple;
 	private: System::Windows::Forms::Button^ buttonPrSimple;
@@ -82,7 +83,7 @@ namespace Eng {
 			this->panelMenu = (gcnew System::Windows::Forms::Panel());
 			this->buttonTest = (gcnew System::Windows::Forms::Button());
 			this->buttonGrammar = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->buttonVocab = (gcnew System::Windows::Forms::Button());
 			this->buttonSong = (gcnew System::Windows::Forms::Button());
 			this->buttonRatio = (gcnew System::Windows::Forms::Button());
 			this->buttonPastSimple = (gcnew System::Windows::Forms::Button());
@@ -99,7 +100,7 @@ namespace Eng {
 				static_cast<System::Int32>(static_cast<System::Byte>(77)));
 			this->panelMenu->Controls->Add(this->buttonTest);
 			this->panelMenu->Controls->Add(this->buttonGrammar);
-			this->panelMenu->Controls->Add(this->button2);
+			this->panelMenu->Controls->Add(this->buttonVocab);
 			this->panelMenu->Controls->Add(this->buttonSong);
 			this->panelMenu->Controls->Add(this->buttonRatio);
 			this->panelMenu->Controls->Add(this->buttonPastSimple);
@@ -127,6 +128,8 @@ namespace Eng {
 			this->buttonTest->TabIndex = 8;
 			this->buttonTest->Text = L"   Тест";
 			this->buttonTest->UseVisualStyleBackColor = false;
+			this->buttonTest->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonTest_MouseEnter);
+			this->buttonTest->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonTest_MouseLeave);
 			// 
 			// buttonGrammar
 			// 
@@ -148,24 +151,24 @@ namespace Eng {
 			this->buttonGrammar->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonGrammar_MouseLeave);
 			this->buttonGrammar->MouseHover += gcnew System::EventHandler(this, &MyForm::button1_MouseHover);
 			// 
-			// button2
+			// buttonVocab
 			// 
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->buttonVocab->FlatAppearance->BorderSize = 0;
+			this->buttonVocab->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonVocab->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
-			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button2->Location = System::Drawing::Point(0, 206);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(250, 100);
-			this->button2->TabIndex = 2;
-			this->button2->Text = L"   Словарь";
-			this->button2->UseVisualStyleBackColor = false;
-			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
-			this->button2->MouseEnter += gcnew System::EventHandler(this, &MyForm::button2_MouseEnter);
-			this->button2->MouseLeave += gcnew System::EventHandler(this, &MyForm::button2_MouseLeave);
+			this->buttonVocab->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->buttonVocab->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonVocab.Image")));
+			this->buttonVocab->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonVocab->Location = System::Drawing::Point(0, 206);
+			this->buttonVocab->Name = L"buttonVocab";
+			this->buttonVocab->Size = System::Drawing::Size(250, 100);
+			this->buttonVocab->TabIndex = 2;
+			this->buttonVocab->Text = L"   Словарь";
+			this->buttonVocab->UseVisualStyleBackColor = false;
+			this->buttonVocab->Click += gcnew System::EventHandler(this, &MyForm::buttonVocab_Click);
+			this->buttonVocab->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseEnter);
+			this->buttonVocab->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseLeave);
 			// 
 			// buttonSong
 			// 
@@ -182,6 +185,8 @@ namespace Eng {
 			this->buttonSong->TabIndex = 6;
 			this->buttonSong->Text = L"   Песня";
 			this->buttonSong->UseVisualStyleBackColor = false;
+			this->buttonSong->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseEnter);
+			this->buttonSong->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseLeave);
 			// 
 			// buttonRatio
 			// 
@@ -198,6 +203,8 @@ namespace Eng {
 			this->buttonRatio->TabIndex = 7;
 			this->buttonRatio->Text = L"   Соотн";
 			this->buttonRatio->UseVisualStyleBackColor = false;
+			this->buttonRatio->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseEnter);
+			this->buttonRatio->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseLeave);
 			// 
 			// buttonPastSimple
 			// 
@@ -310,19 +317,43 @@ private: System::Void buttonGrammar_MouseLeave(System::Object^ sender, System::E
 	buttonGrammar->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
 }
 private: System::Void buttonGrammar_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (!flagTap) { button2->Top += 180; buttonSong->Top += 180; buttonRatio->Top += 180; buttonTest->Top += 180; flagTap = true; buttonPastSimple->Visible = true; buttonFutSimple->Visible = true; buttonPrSimple->Visible = true; }
-	else{ button2->Top -= 180; buttonSong->Top -= 180; buttonRatio->Top -= 180; buttonTest->Top -= 180; flagTap = false; buttonPastSimple->Visible = false; buttonFutSimple->Visible = false; buttonPrSimple->Visible = false;	}
+	if (!flagTap) { buttonVocab->Top += 180; buttonSong->Top += 180; buttonRatio->Top += 180; buttonTest->Top += 180; flagTap = true; buttonPastSimple->Visible = true; buttonFutSimple->Visible = true; buttonPrSimple->Visible = true; }
+	else{ buttonVocab->Top -= 180; buttonSong->Top -= 180; buttonRatio->Top -= 180; buttonTest->Top -= 180; flagTap = false; buttonPastSimple->Visible = false; buttonFutSimple->Visible = false; buttonPrSimple->Visible = false;	}
 }
 
-private: System::Void button2_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	button2->BackColor = Color::FromArgb(104, 181, 211);
-	button2->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
+private: System::Void buttonVocab_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonVocab->BackColor = Color::FromArgb(104, 181, 211);
+	buttonVocab->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
 }
-private: System::Void button2_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	button2->BackColor = Color::FromArgb(50, 52, 77);
-	button2->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
+private: System::Void buttonVocab_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonVocab->BackColor = Color::FromArgb(50, 52, 77);
+	buttonVocab->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
 }
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void buttonVocab_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void buttonSong_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonSong->BackColor = Color::FromArgb(50, 52, 77);
+	buttonSong->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
+}
+private: System::Void buttonSong_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonSong->BackColor = Color::FromArgb(104, 181, 211);
+	buttonSong->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
+}
+private: System::Void buttonRatio_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonRatio->BackColor = Color::FromArgb(104, 181, 211);
+	buttonRatio->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
+}
+private: System::Void buttonRatio_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonRatio->BackColor = Color::FromArgb(50, 52, 77);
+	buttonRatio->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
+}
+private: System::Void buttonTest_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonTest->BackColor = Color::FromArgb(50, 52, 77);
+	buttonTest->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
+}
+private: System::Void buttonTest_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonTest->BackColor = Color::FromArgb(104, 181, 211);
+	buttonTest->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
 }
 };
 }
