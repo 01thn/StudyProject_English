@@ -1,5 +1,5 @@
 #pragma once
-
+#include"Downlands.h"
 namespace Eng {
 
 	using namespace System;
@@ -22,7 +22,11 @@ namespace Eng {
 			//TODO: добавьте код конструктора
 			//
 		}
-
+		MyForm(Downlands^ parent) {
+			InitializeComponent();
+			parentForm = parent;
+		}
+	private: Downlands^ parentForm;
 	protected:
 		/// <summary>
 		/// Освободить все используемые ресурсы.
@@ -66,10 +70,10 @@ namespace Eng {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->panelMenu = (gcnew System::Windows::Forms::Panel());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panelTop = (gcnew System::Windows::Forms::Panel());
 			this->panelWindow = (gcnew System::Windows::Forms::Panel());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->panelMenu->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -85,6 +89,24 @@ namespace Eng {
 			this->panelMenu->Size = System::Drawing::Size(250, 699);
 			this->panelMenu->TabIndex = 0;
 			this->panelMenu->MouseHover += gcnew System::EventHandler(this, &MyForm::panel1_MouseHover);
+			// 
+			// button2
+			// 
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
+			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->button2->Location = System::Drawing::Point(0, 206);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(250, 100);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"   Грамматика";
+			this->button2->UseVisualStyleBackColor = false;
+			this->button2->MouseEnter += gcnew System::EventHandler(this, &MyForm::button2_MouseEnter);
+			this->button2->MouseLeave += gcnew System::EventHandler(this, &MyForm::button2_MouseLeave);
 			// 
 			// button1
 			// 
@@ -124,25 +146,6 @@ namespace Eng {
 			this->panelWindow->Name = L"panelWindow";
 			this->panelWindow->Size = System::Drawing::Size(928, 599);
 			this->panelWindow->TabIndex = 3;
-			this->panelWindow->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::panelWindow_Paint);
-			// 
-			// button2
-			// 
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->button2->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->button2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button2.Image")));
-			this->button2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->button2->Location = System::Drawing::Point(0, 206);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(250, 100);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"   Грамматика";
-			this->button2->UseVisualStyleBackColor = false;
-			this->button2->MouseEnter += gcnew System::EventHandler(this, &MyForm::button2_MouseEnter);
-			this->button2->MouseLeave += gcnew System::EventHandler(this, &MyForm::button2_MouseLeave);
 			// 
 			// MyForm
 			// 
@@ -185,8 +188,7 @@ private: System::Void button1_MouseLeave(System::Object^ sender, System::EventAr
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	button2->Top += 50;
 }
-private: System::Void panelWindow_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
+
 private: System::Void button2_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	button2->BackColor = Color::FromArgb(104, 181, 211);
 	button2->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
@@ -195,5 +197,6 @@ private: System::Void button2_MouseLeave(System::Object^ sender, System::EventAr
 	button2->BackColor = Color::FromArgb(50, 52, 77);
 	button2->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
 }
+
 };
 }
