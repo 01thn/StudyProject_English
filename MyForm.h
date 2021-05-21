@@ -32,6 +32,10 @@ namespace Eng {
 		}
 	private: System::Windows::Forms::Button^ buttonClosePanel;
 	private: System::Windows::Forms::Label^ labelStatus;
+	private: System::Windows::Forms::Button^ buttonHide;
+
+	private: System::Windows::Forms::Button^ buttonClose;
+
 	public:
 	private: Downlands^ parentForm;
 	protected:
@@ -91,12 +95,14 @@ namespace Eng {
 			this->buttonTest = (gcnew System::Windows::Forms::Button());
 			this->buttonGrammar = (gcnew System::Windows::Forms::Button());
 			this->buttonRatio = (gcnew System::Windows::Forms::Button());
+			this->buttonVocab = (gcnew System::Windows::Forms::Button());
+			this->buttonSong = (gcnew System::Windows::Forms::Button());
 			this->buttonPastSimple = (gcnew System::Windows::Forms::Button());
 			this->buttonPrSimple = (gcnew System::Windows::Forms::Button());
-			this->buttonVocab = (gcnew System::Windows::Forms::Button());
 			this->buttonFutSimple = (gcnew System::Windows::Forms::Button());
-			this->buttonSong = (gcnew System::Windows::Forms::Button());
 			this->panelTop = (gcnew System::Windows::Forms::Panel());
+			this->buttonHide = (gcnew System::Windows::Forms::Button());
+			this->buttonClose = (gcnew System::Windows::Forms::Button());
 			this->labelStatus = (gcnew System::Windows::Forms::Label());
 			this->buttonClosePanel = (gcnew System::Windows::Forms::Button());
 			this->panelWindow = (gcnew System::Windows::Forms::Panel());
@@ -119,7 +125,7 @@ namespace Eng {
 			this->panelMenu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelMenu->Location = System::Drawing::Point(0, 0);
 			this->panelMenu->Name = L"panelMenu";
-			this->panelMenu->Size = System::Drawing::Size(250, 949);
+			this->panelMenu->Size = System::Drawing::Size(250, 1000);
 			this->panelMenu->TabIndex = 0;
 			this->panelMenu->MouseHover += gcnew System::EventHandler(this, &MyForm::panel1_MouseHover);
 			// 
@@ -179,6 +185,43 @@ namespace Eng {
 			this->buttonRatio->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseEnter);
 			this->buttonRatio->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseLeave);
 			// 
+			// buttonVocab
+			// 
+			this->buttonVocab->FlatAppearance->BorderSize = 0;
+			this->buttonVocab->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonVocab->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->buttonVocab->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->buttonVocab->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonVocab.Image")));
+			this->buttonVocab->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonVocab->Location = System::Drawing::Point(0, 206);
+			this->buttonVocab->Name = L"buttonVocab";
+			this->buttonVocab->Size = System::Drawing::Size(250, 100);
+			this->buttonVocab->TabIndex = 2;
+			this->buttonVocab->Text = L"   Словарь";
+			this->buttonVocab->UseVisualStyleBackColor = false;
+			this->buttonVocab->Click += gcnew System::EventHandler(this, &MyForm::buttonVocab_Click);
+			this->buttonVocab->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseEnter);
+			this->buttonVocab->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseLeave);
+			// 
+			// buttonSong
+			// 
+			this->buttonSong->FlatAppearance->BorderSize = 0;
+			this->buttonSong->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonSong->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->buttonSong->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->buttonSong->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSong.Image")));
+			this->buttonSong->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonSong->Location = System::Drawing::Point(0, 312);
+			this->buttonSong->Name = L"buttonSong";
+			this->buttonSong->Size = System::Drawing::Size(250, 100);
+			this->buttonSong->TabIndex = 6;
+			this->buttonSong->Text = L"   Песня";
+			this->buttonSong->UseVisualStyleBackColor = false;
+			this->buttonSong->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseEnter);
+			this->buttonSong->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseLeave);
+			// 
 			// buttonPastSimple
 			// 
 			this->buttonPastSimple->FlatAppearance->BorderSize = 0;
@@ -219,25 +262,6 @@ namespace Eng {
 			this->buttonPrSimple->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonPrSimple_MouseEnter);
 			this->buttonPrSimple->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonPrSimple_MouseLeave);
 			// 
-			// buttonVocab
-			// 
-			this->buttonVocab->FlatAppearance->BorderSize = 0;
-			this->buttonVocab->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonVocab->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->buttonVocab->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->buttonVocab->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonVocab.Image")));
-			this->buttonVocab->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonVocab->Location = System::Drawing::Point(0, 206);
-			this->buttonVocab->Name = L"buttonVocab";
-			this->buttonVocab->Size = System::Drawing::Size(250, 100);
-			this->buttonVocab->TabIndex = 2;
-			this->buttonVocab->Text = L"   Словарь";
-			this->buttonVocab->UseVisualStyleBackColor = false;
-			this->buttonVocab->Click += gcnew System::EventHandler(this, &MyForm::buttonVocab_Click);
-			this->buttonVocab->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseEnter);
-			this->buttonVocab->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseLeave);
-			// 
 			// buttonFutSimple
 			// 
 			this->buttonFutSimple->FlatAppearance->BorderSize = 0;
@@ -258,35 +282,47 @@ namespace Eng {
 			this->buttonFutSimple->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonFutSimple_MouseEnter);
 			this->buttonFutSimple->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonFutSimple_MouseLeave);
 			// 
-			// buttonSong
-			// 
-			this->buttonSong->FlatAppearance->BorderSize = 0;
-			this->buttonSong->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonSong->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->buttonSong->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->buttonSong->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSong.Image")));
-			this->buttonSong->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonSong->Location = System::Drawing::Point(0, 312);
-			this->buttonSong->Name = L"buttonSong";
-			this->buttonSong->Size = System::Drawing::Size(250, 100);
-			this->buttonSong->TabIndex = 6;
-			this->buttonSong->Text = L"   Песня";
-			this->buttonSong->UseVisualStyleBackColor = false;
-			this->buttonSong->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseEnter);
-			this->buttonSong->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseLeave);
-			// 
 			// panelTop
 			// 
 			this->panelTop->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
 				static_cast<System::Int32>(static_cast<System::Byte>(230)));
+			this->panelTop->Controls->Add(this->buttonHide);
+			this->panelTop->Controls->Add(this->buttonClose);
 			this->panelTop->Controls->Add(this->labelStatus);
 			this->panelTop->Controls->Add(this->buttonClosePanel);
 			this->panelTop->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panelTop->Location = System::Drawing::Point(250, 0);
 			this->panelTop->Name = L"panelTop";
-			this->panelTop->Size = System::Drawing::Size(1178, 100);
+			this->panelTop->Size = System::Drawing::Size(1200, 100);
 			this->panelTop->TabIndex = 2;
+			// 
+			// buttonHide
+			// 
+			this->buttonHide->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->buttonHide->FlatAppearance->BorderSize = 0;
+			this->buttonHide->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonHide->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonHide.Image")));
+			this->buttonHide->Location = System::Drawing::Point(1112, 12);
+			this->buttonHide->Name = L"buttonHide";
+			this->buttonHide->Size = System::Drawing::Size(35, 35);
+			this->buttonHide->TabIndex = 3;
+			this->buttonHide->UseVisualStyleBackColor = true;
+			this->buttonHide->Click += gcnew System::EventHandler(this, &MyForm::buttonHide_Click);
+			// 
+			// buttonClose
+			// 
+			this->buttonClose->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->buttonClose->FlatAppearance->BorderSize = 0;
+			this->buttonClose->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonClose->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonClose.Image")));
+			this->buttonClose->Location = System::Drawing::Point(1153, 12);
+			this->buttonClose->Name = L"buttonClose";
+			this->buttonClose->Size = System::Drawing::Size(35, 35);
+			this->buttonClose->TabIndex = 2;
+			this->buttonClose->UseVisualStyleBackColor = true;
+			this->buttonClose->Click += gcnew System::EventHandler(this, &MyForm::buttonClose_Click);
+			this->buttonClose->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonClose_MouseEnter);
+			this->buttonClose->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonClose_MouseLeave);
 			// 
 			// labelStatus
 			// 
@@ -317,7 +353,7 @@ namespace Eng {
 			this->panelWindow->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelWindow->Location = System::Drawing::Point(250, 100);
 			this->panelWindow->Name = L"panelWindow";
-			this->panelWindow->Size = System::Drawing::Size(1178, 849);
+			this->panelWindow->Size = System::Drawing::Size(1200, 900);
 			this->panelWindow->TabIndex = 3;
 			// 
 			// MyForm
@@ -325,11 +361,11 @@ namespace Eng {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(1428, 949);
+			this->ClientSize = System::Drawing::Size(1450, 1000);
 			this->Controls->Add(this->panelWindow);
 			this->Controls->Add(this->panelTop);
 			this->Controls->Add(this->panelMenu);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
@@ -473,6 +509,18 @@ private: System::Void buttonPrSimple_Click(System::Object^ sender, System::Event
 }
 private: System::Void buttonFutSimple_Click(System::Object^ sender, System::EventArgs^ e) {
 	
+}
+private: System::Void buttonClose_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+private: System::Void buttonClose_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonClose->BackColor = Color::Red;
+}
+private: System::Void buttonClose_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonClose->BackColor = Color::Transparent;
+}
+private: System::Void buttonHide_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->WindowState = FormWindowState::Minimized;
 }
 };
 }
