@@ -120,7 +120,7 @@ namespace Eng {
 			this->panelMenu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelMenu->Location = System::Drawing::Point(0, 0);
 			this->panelMenu->Name = L"panelMenu";
-			this->panelMenu->Size = System::Drawing::Size(250, 949);
+			this->panelMenu->Size = System::Drawing::Size(250, 1000);
 			this->panelMenu->TabIndex = 0;
 			this->panelMenu->MouseHover += gcnew System::EventHandler(this, &MyForm::panel1_MouseHover);
 			// 
@@ -287,7 +287,7 @@ namespace Eng {
 			this->panelTop->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panelTop->Location = System::Drawing::Point(250, 0);
 			this->panelTop->Name = L"panelTop";
-			this->panelTop->Size = System::Drawing::Size(1178, 100);
+			this->panelTop->Size = System::Drawing::Size(1200, 100);
 			this->panelTop->TabIndex = 2;
 			// 
 			// labelStatus
@@ -319,7 +319,7 @@ namespace Eng {
 			this->panelWindow->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelWindow->Location = System::Drawing::Point(250, 100);
 			this->panelWindow->Name = L"panelWindow";
-			this->panelWindow->Size = System::Drawing::Size(1178, 849);
+			this->panelWindow->Size = System::Drawing::Size(1200, 900);
 			this->panelWindow->TabIndex = 3;
 			// 
 			// MyForm
@@ -327,11 +327,11 @@ namespace Eng {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(1428, 949);
+			this->ClientSize = System::Drawing::Size(1450, 1000);
 			this->Controls->Add(this->panelWindow);
 			this->Controls->Add(this->panelTop);
 			this->Controls->Add(this->panelMenu);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
