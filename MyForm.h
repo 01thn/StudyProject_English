@@ -2,6 +2,7 @@
 #include"Downlands.h"
 #include "Home.h"
 #include "MyForm1.h"
+#include "MyForm2.h"
 
 namespace Eng {
 
@@ -96,9 +97,9 @@ namespace Eng {
 			this->buttonFutSimple = (gcnew System::Windows::Forms::Button());
 			this->buttonSong = (gcnew System::Windows::Forms::Button());
 			this->panelTop = (gcnew System::Windows::Forms::Panel());
+			this->labelStatus = (gcnew System::Windows::Forms::Label());
 			this->buttonClosePanel = (gcnew System::Windows::Forms::Button());
 			this->panelWindow = (gcnew System::Windows::Forms::Panel());
-			this->labelStatus = (gcnew System::Windows::Forms::Label());
 			this->panelMenu->SuspendLayout();
 			this->panelTop->SuspendLayout();
 			this->SuspendLayout();
@@ -110,11 +111,11 @@ namespace Eng {
 			this->panelMenu->Controls->Add(this->buttonTest);
 			this->panelMenu->Controls->Add(this->buttonGrammar);
 			this->panelMenu->Controls->Add(this->buttonRatio);
+			this->panelMenu->Controls->Add(this->buttonVocab);
+			this->panelMenu->Controls->Add(this->buttonSong);
 			this->panelMenu->Controls->Add(this->buttonPastSimple);
 			this->panelMenu->Controls->Add(this->buttonPrSimple);
-			this->panelMenu->Controls->Add(this->buttonVocab);
 			this->panelMenu->Controls->Add(this->buttonFutSimple);
-			this->panelMenu->Controls->Add(this->buttonSong);
 			this->panelMenu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelMenu->Location = System::Drawing::Point(0, 0);
 			this->panelMenu->Name = L"panelMenu";
@@ -214,6 +215,7 @@ namespace Eng {
 			this->buttonPrSimple->Text = L"       Íàñòîÿùåå       ïðîñòîå";
 			this->buttonPrSimple->UseVisualStyleBackColor = false;
 			this->buttonPrSimple->Visible = false;
+			this->buttonPrSimple->Click += gcnew System::EventHandler(this, &MyForm::buttonPrSimple_Click);
 			this->buttonPrSimple->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonPrSimple_MouseEnter);
 			this->buttonPrSimple->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonPrSimple_MouseLeave);
 			// 
@@ -252,6 +254,7 @@ namespace Eng {
 			this->buttonFutSimple->Text = L"     Áóäóùåå       ïðîñòîå";
 			this->buttonFutSimple->UseVisualStyleBackColor = false;
 			this->buttonFutSimple->Visible = false;
+			this->buttonFutSimple->Click += gcnew System::EventHandler(this, &MyForm::buttonFutSimple_Click);
 			this->buttonFutSimple->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonFutSimple_MouseEnter);
 			this->buttonFutSimple->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonFutSimple_MouseLeave);
 			// 
@@ -285,6 +288,19 @@ namespace Eng {
 			this->panelTop->Size = System::Drawing::Size(1178, 100);
 			this->panelTop->TabIndex = 2;
 			// 
+			// labelStatus
+			// 
+			this->labelStatus->AutoSize = true;
+			this->labelStatus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->labelStatus->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->labelStatus->Location = System::Drawing::Point(357, 37);
+			this->labelStatus->Name = L"labelStatus";
+			this->labelStatus->Size = System::Drawing::Size(288, 29);
+			this->labelStatus->TabIndex = 1;
+			this->labelStatus->Text = L"ÄÎÁÐÎ ÏÎÆÀËÎÂÀÒÜ";
+			this->labelStatus->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
 			// buttonClosePanel
 			// 
 			this->buttonClosePanel->Location = System::Drawing::Point(21, 12);
@@ -303,19 +319,6 @@ namespace Eng {
 			this->panelWindow->Name = L"panelWindow";
 			this->panelWindow->Size = System::Drawing::Size(1178, 849);
 			this->panelWindow->TabIndex = 3;
-			// 
-			// labelStatus
-			// 
-			this->labelStatus->AutoSize = true;
-			this->labelStatus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->labelStatus->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->labelStatus->Location = System::Drawing::Point(357, 37);
-			this->labelStatus->Name = L"labelStatus";
-			this->labelStatus->Size = System::Drawing::Size(288, 29);
-			this->labelStatus->TabIndex = 1;
-			this->labelStatus->Text = L"ÄÎÁÐÎ ÏÎÆÀËÎÂÀÒÜ";
-			this->labelStatus->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// MyForm
 			// 
@@ -348,6 +351,7 @@ namespace Eng {
 		this->panelWindow->Tag = H;
 		H->BringToFront();
 		H->Show();
+		buttonClosePanel->Visible = false;
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		flagTap = false;
@@ -436,8 +440,8 @@ private: System::Void buttonFutSimple_MouseLeave(System::Object^ sender, System:
 	buttonFutSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
 }
 private: System::Void buttonPastSimple_Click(System::Object^ sender, System::EventArgs^ e) {
-	buttonPastSimple->BackColor = Color::FromArgb(104, 181, 211);
-	buttonPastSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
+	//buttonPastSimple->BackColor = Color::FromArgb(104, 181, 211);
+	//buttonPastSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
 	MyForm1^ J = gcnew MyForm1();
 	J->Owner = this;
 	J->TopLevel = false;
@@ -446,12 +450,29 @@ private: System::Void buttonPastSimple_Click(System::Object^ sender, System::Eve
 	this->panelWindow->Tag = J;
 	J->BringToFront();
 	J->Show();
-	labelStatus->Text = "ÃÐÀÌÌÀÒÈÊÀ";
+	labelStatus->Text = "PAST SIMPLE";
 	buttonClosePanel->Visible = true;
 }
 private: System::Void buttonClosePanel_Click(System::Object^ sender, System::EventArgs^ e) {
 	HomeOpen(sender, e);
 	labelStatus->Text = "ÄÎÌÀØÍßß ÑÒÐÀÍÈÖÀ";
+}
+private: System::Void buttonPrSimple_Click(System::Object^ sender, System::EventArgs^ e) {
+	//buttonPrSimple->BackColor = Color::FromArgb(104, 181, 211);
+	//buttonPrSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
+	MyForm2^ K = gcnew MyForm2();
+	K->Owner = this;
+	K->TopLevel = false;
+	K->Dock = DockStyle::Fill;
+	this->panelWindow->Controls->Add(K);
+	this->panelWindow->Tag = K;
+	K->BringToFront();
+	K->Show();
+	labelStatus->Text = "PRESENT SIMPLE";
+	buttonClosePanel->Visible = true;
+}
+private: System::Void buttonFutSimple_Click(System::Object^ sender, System::EventArgs^ e) {
+	
 }
 };
 }
