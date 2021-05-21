@@ -1,5 +1,7 @@
 #pragma once
 #include"Downlands.h"
+#include "MyForm1.h"
+
 namespace Eng {
 
 	using namespace System;
@@ -387,11 +389,19 @@ private: System::Void buttonFutSimple_MouseLeave(System::Object^ sender, System:
 	buttonFutSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
 }
 private: System::Void buttonPastSimple_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (ActiveForm) {
-		ActiveForm->Close();
-	}
+	//if (ActiveForm) {
+	//	ActiveForm->Close();
+	//}
 	buttonPastSimple->BackColor = Color::FromArgb(104, 181, 211);
 	buttonPastSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
+	MyForm1^ J = gcnew MyForm1();
+	J->Owner = this;
+	J->TopLevel = false;
+	J->Dock = DockStyle::Fill;
+	this->panelWindow->Controls->Add(J);
+	this->panelWindow->Tag = J;
+	J->BringToFront();
+	J->Show();
 }
 };
 }
