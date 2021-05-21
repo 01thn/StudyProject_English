@@ -353,6 +353,7 @@ namespace Eng {
 		flagTap = false;
 		HomeOpen(sender, e);
 		labelStatus->Text = "ÄÎÌÀØÍßß ÑÒÐÀÍÈÖÀ";
+		buttonClosePanel->Visible = false;
 	}
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -446,6 +447,7 @@ private: System::Void buttonPastSimple_Click(System::Object^ sender, System::Eve
 	J->BringToFront();
 	J->Show();
 	labelStatus->Text = "ÃÐÀÌÌÀÒÈÊÀ";
+	buttonClosePanel->Visible = true;
 }
 private: System::Void buttonClosePanel_Click(System::Object^ sender, System::EventArgs^ e) {
 	HomeOpen(sender, e);
