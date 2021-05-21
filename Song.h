@@ -8,7 +8,7 @@ namespace Eng {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-
+	using namespace System::Media;
 	/// <summary>
 	/// Сводка для Song
 	/// </summary>
@@ -167,8 +167,13 @@ namespace Eng {
 
 		}
 #pragma endregion
+	
+		SoundPlayer^ player = nullptr;
+			//gcnew SoundPlayer("D:/VS_2019/LastDance/Media/aplodismentyi-38722.wav");
 
 	private: System::Void Song_Load(System::Object^ sender, System::EventArgs^ e) {
+		player = gcnew SoundPlayer();
+		
 	}
 
 
