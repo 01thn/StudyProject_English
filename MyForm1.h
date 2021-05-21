@@ -276,7 +276,7 @@ namespace Eng {
 			this->label9->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(103)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)));
-			this->label9->Location = System::Drawing::Point(739, 168);
+			this->label9->Location = System::Drawing::Point(742, 182);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(352, 19);
 			this->label9->TabIndex = 14;
@@ -289,7 +289,7 @@ namespace Eng {
 			this->label10->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(103)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)));
-			this->label10->Location = System::Drawing::Point(767, 297);
+			this->label10->Location = System::Drawing::Point(767, 323);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(324, 38);
 			this->label10->TabIndex = 15;
@@ -302,7 +302,7 @@ namespace Eng {
 			this->label11->Font = (gcnew System::Drawing::Font(L"Arial", 10));
 			this->label11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(103)), static_cast<System::Int32>(static_cast<System::Byte>(128)),
 				static_cast<System::Int32>(static_cast<System::Byte>(148)));
-			this->label11->Location = System::Drawing::Point(794, 468);
+			this->label11->Location = System::Drawing::Point(794, 482);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(297, 38);
 			this->label11->TabIndex = 16;
@@ -312,7 +312,7 @@ namespace Eng {
 			// pictureBox7
 			// 
 			this->pictureBox7->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.Image")));
-			this->pictureBox7->Location = System::Drawing::Point(822, 211);
+			this->pictureBox7->Location = System::Drawing::Point(825, 225);
 			this->pictureBox7->Name = L"pictureBox7";
 			this->pictureBox7->Size = System::Drawing::Size(197, 63);
 			this->pictureBox7->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -322,9 +322,9 @@ namespace Eng {
 			// pictureBox8
 			// 
 			this->pictureBox8->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox8.Image")));
-			this->pictureBox8->Location = System::Drawing::Point(759, 350);
+			this->pictureBox8->Location = System::Drawing::Point(695, 381);
 			this->pictureBox8->Name = L"pictureBox8";
-			this->pictureBox8->Size = System::Drawing::Size(391, 86);
+			this->pictureBox8->Size = System::Drawing::Size(493, 66);
 			this->pictureBox8->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox8->TabIndex = 18;
 			this->pictureBox8->TabStop = false;
@@ -332,9 +332,9 @@ namespace Eng {
 			// pictureBox9
 			// 
 			this->pictureBox9->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox9.Image")));
-			this->pictureBox9->Location = System::Drawing::Point(712, 531);
+			this->pictureBox9->Location = System::Drawing::Point(678, 542);
 			this->pictureBox9->Name = L"pictureBox9";
-			this->pictureBox9->Size = System::Drawing::Size(463, 45);
+			this->pictureBox9->Size = System::Drawing::Size(510, 50);
 			this->pictureBox9->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox9->TabIndex = 19;
 			this->pictureBox9->TabStop = false;

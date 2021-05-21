@@ -194,12 +194,12 @@ namespace Eng {
 private: System::Void buttonGrammar_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (flag) {
 		player->Play();
-		buttonGrammar->Image = Image::FromFile("C:/Users/winda/source/repos/01thn/Eng/Media/стоп.png");
+		buttonGrammar->Image = Image::FromFile("Media/стоп.png");
 		flag = false;
 	}
 	else {
 		player->Stop();
-		buttonGrammar->Image = Image::FromFile("C:/Users/winda/source/repos/01thn/Eng/Media/старт.png");
+		buttonGrammar->Image = Image::FromFile("Media/старт.png");
 		flag = true;
 	}
 	
@@ -208,7 +208,7 @@ private: System::Void buttonGrammar_Click(System::Object^ sender, System::EventA
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	buttonGrammar->Image = Image::FromFile("C:/Users/winda/source/repos/01thn/Eng/Media/старт.png");
+	buttonGrammar->Image = Image::FromFile("Media/старт.png");
 	player->Stop();
 	player->SoundLocation = SongChange(id);
 	id++;
@@ -218,7 +218,7 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	id--;
 	player->Stop();
 	player->SoundLocation = SongChange(id);
-	buttonGrammar->Image = Image::FromFile("C:/Users/winda/source/repos/01thn/Eng/Media/старт.png");
+	buttonGrammar->Image = Image::FromFile("Media/старт.png");
 	flag = true;
 }
 };

@@ -139,7 +139,7 @@ namespace Eng {
 			this->buttonTest->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->buttonTest->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonTest.Image")));
 			this->buttonTest->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonTest->Location = System::Drawing::Point(0, 524);
+			this->buttonTest->Location = System::Drawing::Point(0, 752);
 			this->buttonTest->Name = L"buttonTest";
 			this->buttonTest->Size = System::Drawing::Size(250, 100);
 			this->buttonTest->TabIndex = 8;
@@ -177,7 +177,7 @@ namespace Eng {
 			this->buttonRatio->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->buttonRatio->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonRatio.Image")));
 			this->buttonRatio->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonRatio->Location = System::Drawing::Point(0, 418);
+			this->buttonRatio->Location = System::Drawing::Point(0, 646);
 			this->buttonRatio->Name = L"buttonRatio";
 			this->buttonRatio->Size = System::Drawing::Size(250, 100);
 			this->buttonRatio->TabIndex = 7;
@@ -195,7 +195,7 @@ namespace Eng {
 			this->buttonVocab->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->buttonVocab->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonVocab.Image")));
 			this->buttonVocab->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonVocab->Location = System::Drawing::Point(0, 206);
+			this->buttonVocab->Location = System::Drawing::Point(0, 434);
 			this->buttonVocab->Name = L"buttonVocab";
 			this->buttonVocab->Size = System::Drawing::Size(250, 100);
 			this->buttonVocab->TabIndex = 2;
@@ -214,7 +214,7 @@ namespace Eng {
 			this->buttonSong->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->buttonSong->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSong.Image")));
 			this->buttonSong->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonSong->Location = System::Drawing::Point(0, 312);
+			this->buttonSong->Location = System::Drawing::Point(0, 540);
 			this->buttonSong->Name = L"buttonSong";
 			this->buttonSong->Size = System::Drawing::Size(250, 100);
 			this->buttonSong->TabIndex = 6;
@@ -409,10 +409,10 @@ namespace Eng {
 		buttonClosePanel->Visible = false;
 	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-		flagTap = false;
 		HomeOpen(sender, e);
 		labelStatus->Text = "ÄÎÌÀØÍßß ÑÒÐÀÍÈÖÀ";
 		buttonClosePanel->Visible = false;
+		buttonVocab->Top -= 180; buttonSong->Top -= 180; buttonRatio->Top -= 180; buttonTest->Top -= 180; flagTap = false; buttonPastSimple->Visible = false; buttonFutSimple->Visible = false; buttonPrSimple->Visible = false;
 	}
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
