@@ -3,6 +3,7 @@
 #include "Home.h"
 #include "MyForm1.h"
 #include "MyForm2.h"
+#include"Song.h"
 
 namespace Eng {
 
@@ -219,6 +220,7 @@ namespace Eng {
 			this->buttonSong->TabIndex = 6;
 			this->buttonSong->Text = L"   Ïåñíÿ";
 			this->buttonSong->UseVisualStyleBackColor = false;
+			this->buttonSong->Click += gcnew System::EventHandler(this, &MyForm::buttonSong_Click);
 			this->buttonSong->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseEnter);
 			this->buttonSong->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseLeave);
 			// 
@@ -395,6 +397,17 @@ namespace Eng {
 		H->Show();
 		buttonClosePanel->Visible = false;
 	}
+	Void SongOpen() {
+		Song^ H = gcnew Song();
+		H->Owner = this;
+		H->TopLevel = false;
+		H->Dock = DockStyle::Fill;
+		this->panelWindow->Controls->Add(H);
+		this->panelWindow->Tag = H;
+		H->BringToFront();
+		H->Show();
+		buttonClosePanel->Visible = false;
+	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		flagTap = false;
 		HomeOpen(sender, e);
@@ -539,6 +552,11 @@ private: System::Void buttonHide_MouseEnter(System::Object^ sender, System::Even
 }
 private: System::Void buttonHide_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	buttonHide->BackColor = Color::Transparent;
+}
+private: System::Void buttonSong_Click(System::Object^ sender, System::EventArgs^ e) {
+	SongOpen();
+	labelStatus->Text = "ÏÅÐÅÂÅÄÈ ÏÅÑÍÞ";
+	buttonClosePanel->Visible = true;
 }
 };
 }
