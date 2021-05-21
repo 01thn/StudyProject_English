@@ -10,12 +10,12 @@ namespace Eng {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для MyForm1
+	/// Сводка для MyForm2
 	/// </summary>
-	public ref class MyForm1 : public System::Windows::Forms::Form
+	public ref class MyForm2 : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm1(void)
+		MyForm2(void)
 		{
 			InitializeComponent();
 			//
@@ -27,15 +27,13 @@ namespace Eng {
 		/// <summary>
 		/// Освободить все используемые ресурсы.
 		/// </summary>
-		~MyForm1()
+		~MyForm2()
 		{
 			if (components)
 			{
 				delete components;
 			}
 		}
-
-	protected:
 
 	private:
 		/// <summary>
@@ -52,15 +50,15 @@ namespace Eng {
 		{
 			this->SuspendLayout();
 			// 
-			// MyForm1
+			// MyForm2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1178, 849);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Name = L"MyForm1";
-			this->Text = L"MyForm1";
+			this->Name = L"MyForm2";
+			this->Text = L"MyForm2";
 			this->ResumeLayout(false);
 
 		}
