@@ -83,12 +83,12 @@ namespace Eng {
 			this->panelMenu = (gcnew System::Windows::Forms::Panel());
 			this->buttonTest = (gcnew System::Windows::Forms::Button());
 			this->buttonGrammar = (gcnew System::Windows::Forms::Button());
-			this->buttonVocab = (gcnew System::Windows::Forms::Button());
-			this->buttonSong = (gcnew System::Windows::Forms::Button());
 			this->buttonRatio = (gcnew System::Windows::Forms::Button());
 			this->buttonPastSimple = (gcnew System::Windows::Forms::Button());
 			this->buttonPrSimple = (gcnew System::Windows::Forms::Button());
+			this->buttonVocab = (gcnew System::Windows::Forms::Button());
 			this->buttonFutSimple = (gcnew System::Windows::Forms::Button());
+			this->buttonSong = (gcnew System::Windows::Forms::Button());
 			this->panelTop = (gcnew System::Windows::Forms::Panel());
 			this->panelWindow = (gcnew System::Windows::Forms::Panel());
 			this->panelMenu->SuspendLayout();
@@ -100,12 +100,12 @@ namespace Eng {
 				static_cast<System::Int32>(static_cast<System::Byte>(77)));
 			this->panelMenu->Controls->Add(this->buttonTest);
 			this->panelMenu->Controls->Add(this->buttonGrammar);
-			this->panelMenu->Controls->Add(this->buttonVocab);
-			this->panelMenu->Controls->Add(this->buttonSong);
 			this->panelMenu->Controls->Add(this->buttonRatio);
 			this->panelMenu->Controls->Add(this->buttonPastSimple);
 			this->panelMenu->Controls->Add(this->buttonPrSimple);
+			this->panelMenu->Controls->Add(this->buttonVocab);
 			this->panelMenu->Controls->Add(this->buttonFutSimple);
+			this->panelMenu->Controls->Add(this->buttonSong);
 			this->panelMenu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelMenu->Location = System::Drawing::Point(0, 0);
 			this->panelMenu->Name = L"panelMenu";
@@ -151,43 +151,6 @@ namespace Eng {
 			this->buttonGrammar->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonGrammar_MouseLeave);
 			this->buttonGrammar->MouseHover += gcnew System::EventHandler(this, &MyForm::button1_MouseHover);
 			// 
-			// buttonVocab
-			// 
-			this->buttonVocab->FlatAppearance->BorderSize = 0;
-			this->buttonVocab->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonVocab->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->buttonVocab->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->buttonVocab->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonVocab.Image")));
-			this->buttonVocab->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonVocab->Location = System::Drawing::Point(0, 206);
-			this->buttonVocab->Name = L"buttonVocab";
-			this->buttonVocab->Size = System::Drawing::Size(250, 100);
-			this->buttonVocab->TabIndex = 2;
-			this->buttonVocab->Text = L"   Словарь";
-			this->buttonVocab->UseVisualStyleBackColor = false;
-			this->buttonVocab->Click += gcnew System::EventHandler(this, &MyForm::buttonVocab_Click);
-			this->buttonVocab->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseEnter);
-			this->buttonVocab->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseLeave);
-			// 
-			// buttonSong
-			// 
-			this->buttonSong->FlatAppearance->BorderSize = 0;
-			this->buttonSong->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonSong->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->buttonSong->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->buttonSong->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSong.Image")));
-			this->buttonSong->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonSong->Location = System::Drawing::Point(0, 312);
-			this->buttonSong->Name = L"buttonSong";
-			this->buttonSong->Size = System::Drawing::Size(250, 100);
-			this->buttonSong->TabIndex = 6;
-			this->buttonSong->Text = L"   Песня";
-			this->buttonSong->UseVisualStyleBackColor = false;
-			this->buttonSong->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseEnter);
-			this->buttonSong->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseLeave);
-			// 
 			// buttonRatio
 			// 
 			this->buttonRatio->FlatAppearance->BorderSize = 0;
@@ -215,13 +178,16 @@ namespace Eng {
 			this->buttonPastSimple->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->buttonPastSimple->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonPastSimple.Image")));
 			this->buttonPastSimple->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonPastSimple->Location = System::Drawing::Point(0, 206);
+			this->buttonPastSimple->Location = System::Drawing::Point(23, 206);
 			this->buttonPastSimple->Name = L"buttonPastSimple";
-			this->buttonPastSimple->Size = System::Drawing::Size(250, 70);
+			this->buttonPastSimple->Size = System::Drawing::Size(227, 70);
 			this->buttonPastSimple->TabIndex = 3;
 			this->buttonPastSimple->Text = L"       Прошедшее      простое";
 			this->buttonPastSimple->UseVisualStyleBackColor = false;
 			this->buttonPastSimple->Visible = false;
+			this->buttonPastSimple->Click += gcnew System::EventHandler(this, &MyForm::buttonPastSimple_Click);
+			this->buttonPastSimple->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonPastSimple_MouseEnter);
+			this->buttonPastSimple->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonPastSimple_MouseLeave);
 			// 
 			// buttonPrSimple
 			// 
@@ -232,13 +198,34 @@ namespace Eng {
 			this->buttonPrSimple->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->buttonPrSimple->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonPrSimple.Image")));
 			this->buttonPrSimple->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonPrSimple->Location = System::Drawing::Point(0, 282);
+			this->buttonPrSimple->Location = System::Drawing::Point(23, 282);
 			this->buttonPrSimple->Name = L"buttonPrSimple";
-			this->buttonPrSimple->Size = System::Drawing::Size(250, 70);
+			this->buttonPrSimple->Size = System::Drawing::Size(227, 70);
 			this->buttonPrSimple->TabIndex = 4;
 			this->buttonPrSimple->Text = L"       Настоящее       простое";
 			this->buttonPrSimple->UseVisualStyleBackColor = false;
 			this->buttonPrSimple->Visible = false;
+			this->buttonPrSimple->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonPrSimple_MouseEnter);
+			this->buttonPrSimple->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonPrSimple_MouseLeave);
+			// 
+			// buttonVocab
+			// 
+			this->buttonVocab->FlatAppearance->BorderSize = 0;
+			this->buttonVocab->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonVocab->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->buttonVocab->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->buttonVocab->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonVocab.Image")));
+			this->buttonVocab->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonVocab->Location = System::Drawing::Point(0, 206);
+			this->buttonVocab->Name = L"buttonVocab";
+			this->buttonVocab->Size = System::Drawing::Size(250, 100);
+			this->buttonVocab->TabIndex = 2;
+			this->buttonVocab->Text = L"   Словарь";
+			this->buttonVocab->UseVisualStyleBackColor = false;
+			this->buttonVocab->Click += gcnew System::EventHandler(this, &MyForm::buttonVocab_Click);
+			this->buttonVocab->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseEnter);
+			this->buttonVocab->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseLeave);
 			// 
 			// buttonFutSimple
 			// 
@@ -249,13 +236,33 @@ namespace Eng {
 			this->buttonFutSimple->ForeColor = System::Drawing::SystemColors::ControlLightLight;
 			this->buttonFutSimple->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonFutSimple.Image")));
 			this->buttonFutSimple->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->buttonFutSimple->Location = System::Drawing::Point(0, 358);
+			this->buttonFutSimple->Location = System::Drawing::Point(23, 358);
 			this->buttonFutSimple->Name = L"buttonFutSimple";
-			this->buttonFutSimple->Size = System::Drawing::Size(250, 70);
+			this->buttonFutSimple->Size = System::Drawing::Size(227, 70);
 			this->buttonFutSimple->TabIndex = 5;
-			this->buttonFutSimple->Text = L"         Будущее простое";
+			this->buttonFutSimple->Text = L"     Будущее       простое";
 			this->buttonFutSimple->UseVisualStyleBackColor = false;
 			this->buttonFutSimple->Visible = false;
+			this->buttonFutSimple->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonFutSimple_MouseEnter);
+			this->buttonFutSimple->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonFutSimple_MouseLeave);
+			// 
+			// buttonSong
+			// 
+			this->buttonSong->FlatAppearance->BorderSize = 0;
+			this->buttonSong->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonSong->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->buttonSong->ForeColor = System::Drawing::SystemColors::ControlLightLight;
+			this->buttonSong->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonSong.Image")));
+			this->buttonSong->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonSong->Location = System::Drawing::Point(0, 312);
+			this->buttonSong->Name = L"buttonSong";
+			this->buttonSong->Size = System::Drawing::Size(250, 100);
+			this->buttonSong->TabIndex = 6;
+			this->buttonSong->Text = L"   Песня";
+			this->buttonSong->UseVisualStyleBackColor = false;
+			this->buttonSong->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseEnter);
+			this->buttonSong->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseLeave);
 			// 
 			// panelTop
 			// 
@@ -354,6 +361,37 @@ private: System::Void buttonTest_MouseLeave(System::Object^ sender, System::Even
 private: System::Void buttonTest_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	buttonTest->BackColor = Color::FromArgb(104, 181, 211);
 	buttonTest->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
+}
+private: System::Void buttonPastSimple_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonPastSimple->BackColor = Color::FromArgb(50, 52, 77);
+	buttonPastSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
+}
+private: System::Void buttonPastSimple_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonPastSimple->BackColor = Color::FromArgb(104, 181, 211);
+	buttonPastSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
+}
+private: System::Void buttonPrSimple_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonPrSimple->BackColor = Color::FromArgb(104, 181, 211);
+	buttonPrSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
+}
+private: System::Void buttonPrSimple_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonPrSimple->BackColor = Color::FromArgb(50, 52, 77);
+	buttonPrSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
+}
+private: System::Void buttonFutSimple_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonFutSimple->BackColor = Color::FromArgb(104, 181, 211);
+	buttonFutSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
+}
+private: System::Void buttonFutSimple_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonFutSimple->BackColor = Color::FromArgb(50, 52, 77);
+	buttonFutSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
+}
+private: System::Void buttonPastSimple_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (ActiveForm) {
+		ActiveForm->Close();
+	}
+	buttonPastSimple->BackColor = Color::FromArgb(104, 181, 211);
+	buttonPastSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
 }
 };
 }
