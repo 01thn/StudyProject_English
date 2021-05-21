@@ -1,8 +1,7 @@
-п»ї#pragma once
+#pragma once
 #include"Downlands.h"
 #include "Home.h"
 #include "MyForm1.h"
-#include"Song.h"
 #include "MyForm2.h"
 
 namespace Eng {
@@ -15,7 +14,7 @@ namespace Eng {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ MyForm
+	/// Сводка для MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -24,7 +23,7 @@ namespace Eng {
 		{
 			InitializeComponent();
 			//
-			//TODO: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+			//TODO: добавьте код конструктора
 			//
 		}
 		MyForm(Downlands^ parent) {
@@ -33,11 +32,15 @@ namespace Eng {
 		}
 	private: System::Windows::Forms::Button^ buttonClosePanel;
 	private: System::Windows::Forms::Label^ labelStatus;
+	private: System::Windows::Forms::Button^ buttonHide;
+
+	private: System::Windows::Forms::Button^ buttonClose;
+
 	public:
 	private: Downlands^ parentForm;
 	protected:
 		/// <summary>
-		/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+		/// Освободить все используемые ресурсы.
 		/// </summary>
 		~MyForm()
 		{
@@ -76,14 +79,14 @@ namespace Eng {
 
 	private:
 		/// <summary>
-		/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
+		/// Обязательная переменная конструктора.
 		/// </summary>
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
-		/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ.
+		/// Требуемый метод для поддержки конструктора — не изменяйте 
+		/// содержимое этого метода с помощью редактора кода.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -98,6 +101,8 @@ namespace Eng {
 			this->buttonPrSimple = (gcnew System::Windows::Forms::Button());
 			this->buttonFutSimple = (gcnew System::Windows::Forms::Button());
 			this->panelTop = (gcnew System::Windows::Forms::Panel());
+			this->buttonHide = (gcnew System::Windows::Forms::Button());
+			this->buttonClose = (gcnew System::Windows::Forms::Button());
 			this->labelStatus = (gcnew System::Windows::Forms::Label());
 			this->buttonClosePanel = (gcnew System::Windows::Forms::Button());
 			this->panelWindow = (gcnew System::Windows::Forms::Panel());
@@ -120,7 +125,7 @@ namespace Eng {
 			this->panelMenu->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelMenu->Location = System::Drawing::Point(0, 0);
 			this->panelMenu->Name = L"panelMenu";
-			this->panelMenu->Size = System::Drawing::Size(250, 949);
+			this->panelMenu->Size = System::Drawing::Size(250, 1000);
 			this->panelMenu->TabIndex = 0;
 			this->panelMenu->MouseHover += gcnew System::EventHandler(this, &MyForm::panel1_MouseHover);
 			// 
@@ -137,7 +142,7 @@ namespace Eng {
 			this->buttonTest->Name = L"buttonTest";
 			this->buttonTest->Size = System::Drawing::Size(250, 100);
 			this->buttonTest->TabIndex = 8;
-			this->buttonTest->Text = L"РўРµСЃС‚";
+			this->buttonTest->Text = L"   Тест";
 			this->buttonTest->UseVisualStyleBackColor = false;
 			this->buttonTest->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonTest_MouseEnter);
 			this->buttonTest->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonTest_MouseLeave);
@@ -155,7 +160,7 @@ namespace Eng {
 			this->buttonGrammar->Name = L"buttonGrammar";
 			this->buttonGrammar->Size = System::Drawing::Size(250, 100);
 			this->buttonGrammar->TabIndex = 0;
-			this->buttonGrammar->Text = L"  Р“СЂР°РјРјР°С‚РёРєР°";
+			this->buttonGrammar->Text = L"   Грамматика";
 			this->buttonGrammar->UseVisualStyleBackColor = false;
 			this->buttonGrammar->Click += gcnew System::EventHandler(this, &MyForm::buttonGrammar_Click);
 			this->buttonGrammar->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonGrammar_MouseEnter);
@@ -175,7 +180,7 @@ namespace Eng {
 			this->buttonRatio->Name = L"buttonRatio";
 			this->buttonRatio->Size = System::Drawing::Size(250, 100);
 			this->buttonRatio->TabIndex = 7;
-			this->buttonRatio->Text = L"Р’С‹Р±РѕСЂ ";
+			this->buttonRatio->Text = L"   Соотн";
 			this->buttonRatio->UseVisualStyleBackColor = false;
 			this->buttonRatio->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseEnter);
 			this->buttonRatio->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseLeave);
@@ -193,7 +198,7 @@ namespace Eng {
 			this->buttonVocab->Name = L"buttonVocab";
 			this->buttonVocab->Size = System::Drawing::Size(250, 100);
 			this->buttonVocab->TabIndex = 2;
-			this->buttonVocab->Text = L"РЎР»РѕРІР°СЂСЊ";
+			this->buttonVocab->Text = L"   Словарь";
 			this->buttonVocab->UseVisualStyleBackColor = false;
 			this->buttonVocab->Click += gcnew System::EventHandler(this, &MyForm::buttonVocab_Click);
 			this->buttonVocab->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseEnter);
@@ -212,9 +217,8 @@ namespace Eng {
 			this->buttonSong->Name = L"buttonSong";
 			this->buttonSong->Size = System::Drawing::Size(250, 100);
 			this->buttonSong->TabIndex = 6;
-			this->buttonSong->Text = L"РњСѓР·С‹РєР°";
+			this->buttonSong->Text = L"   Песня";
 			this->buttonSong->UseVisualStyleBackColor = false;
-			this->buttonSong->Click += gcnew System::EventHandler(this, &MyForm::buttonSong_Click);
 			this->buttonSong->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseEnter);
 			this->buttonSong->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseLeave);
 			// 
@@ -231,7 +235,7 @@ namespace Eng {
 			this->buttonPastSimple->Name = L"buttonPastSimple";
 			this->buttonPastSimple->Size = System::Drawing::Size(227, 70);
 			this->buttonPastSimple->TabIndex = 3;
-			this->buttonPastSimple->Text = L"Past Simpl";
+			this->buttonPastSimple->Text = L"       Прошедшее      простое";
 			this->buttonPastSimple->UseVisualStyleBackColor = false;
 			this->buttonPastSimple->Visible = false;
 			this->buttonPastSimple->Click += gcnew System::EventHandler(this, &MyForm::buttonPastSimple_Click);
@@ -251,7 +255,7 @@ namespace Eng {
 			this->buttonPrSimple->Name = L"buttonPrSimple";
 			this->buttonPrSimple->Size = System::Drawing::Size(227, 70);
 			this->buttonPrSimple->TabIndex = 4;
-			this->buttonPrSimple->Text = L"Present Simpl";
+			this->buttonPrSimple->Text = L"       Настоящее       простое";
 			this->buttonPrSimple->UseVisualStyleBackColor = false;
 			this->buttonPrSimple->Visible = false;
 			this->buttonPrSimple->Click += gcnew System::EventHandler(this, &MyForm::buttonPrSimple_Click);
@@ -271,7 +275,7 @@ namespace Eng {
 			this->buttonFutSimple->Name = L"buttonFutSimple";
 			this->buttonFutSimple->Size = System::Drawing::Size(227, 70);
 			this->buttonFutSimple->TabIndex = 5;
-			this->buttonFutSimple->Text = L"Future Simple";
+			this->buttonFutSimple->Text = L"     Будущее       простое";
 			this->buttonFutSimple->UseVisualStyleBackColor = false;
 			this->buttonFutSimple->Visible = false;
 			this->buttonFutSimple->Click += gcnew System::EventHandler(this, &MyForm::buttonFutSimple_Click);
@@ -282,13 +286,45 @@ namespace Eng {
 			// 
 			this->panelTop->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(115)), static_cast<System::Int32>(static_cast<System::Byte>(195)),
 				static_cast<System::Int32>(static_cast<System::Byte>(230)));
+			this->panelTop->Controls->Add(this->buttonHide);
+			this->panelTop->Controls->Add(this->buttonClose);
 			this->panelTop->Controls->Add(this->labelStatus);
 			this->panelTop->Controls->Add(this->buttonClosePanel);
 			this->panelTop->Dock = System::Windows::Forms::DockStyle::Top;
 			this->panelTop->Location = System::Drawing::Point(250, 0);
 			this->panelTop->Name = L"panelTop";
-			this->panelTop->Size = System::Drawing::Size(1178, 100);
+			this->panelTop->Size = System::Drawing::Size(1200, 100);
 			this->panelTop->TabIndex = 2;
+			// 
+			// buttonHide
+			// 
+			this->buttonHide->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->buttonHide->FlatAppearance->BorderSize = 0;
+			this->buttonHide->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonHide->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonHide.Image")));
+			this->buttonHide->Location = System::Drawing::Point(1112, 12);
+			this->buttonHide->Name = L"buttonHide";
+			this->buttonHide->Size = System::Drawing::Size(35, 35);
+			this->buttonHide->TabIndex = 3;
+			this->buttonHide->UseVisualStyleBackColor = true;
+			this->buttonHide->Click += gcnew System::EventHandler(this, &MyForm::buttonHide_Click);
+			this->buttonHide->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonHide_MouseEnter);
+			this->buttonHide->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonHide_MouseLeave);
+			// 
+			// buttonClose
+			// 
+			this->buttonClose->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
+			this->buttonClose->FlatAppearance->BorderSize = 0;
+			this->buttonClose->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonClose->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonClose.Image")));
+			this->buttonClose->Location = System::Drawing::Point(1153, 12);
+			this->buttonClose->Name = L"buttonClose";
+			this->buttonClose->Size = System::Drawing::Size(35, 35);
+			this->buttonClose->TabIndex = 2;
+			this->buttonClose->UseVisualStyleBackColor = true;
+			this->buttonClose->Click += gcnew System::EventHandler(this, &MyForm::buttonClose_Click);
+			this->buttonClose->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonClose_MouseEnter);
+			this->buttonClose->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonClose_MouseLeave);
 			// 
 			// labelStatus
 			// 
@@ -300,18 +336,22 @@ namespace Eng {
 			this->labelStatus->Name = L"labelStatus";
 			this->labelStatus->Size = System::Drawing::Size(288, 29);
 			this->labelStatus->TabIndex = 1;
-			this->labelStatus->Text = L"Р”РћР‘Р Рћ РџРћР–РђР›РћР’РђРўР¬";
+			this->labelStatus->Text = L"ДОБРО ПОЖАЛОВАТЬ";
 			this->labelStatus->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// buttonClosePanel
 			// 
-			this->buttonClosePanel->Location = System::Drawing::Point(21, 12);
+			this->buttonClosePanel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonClosePanel.BackgroundImage")));
+			this->buttonClosePanel->FlatAppearance->BorderSize = 0;
+			this->buttonClosePanel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonClosePanel->Location = System::Drawing::Point(16, 31);
 			this->buttonClosePanel->Name = L"buttonClosePanel";
-			this->buttonClosePanel->Size = System::Drawing::Size(74, 65);
+			this->buttonClosePanel->Size = System::Drawing::Size(35, 35);
 			this->buttonClosePanel->TabIndex = 0;
-			this->buttonClosePanel->Text = L"buttonClosePanel";
 			this->buttonClosePanel->UseVisualStyleBackColor = true;
 			this->buttonClosePanel->Click += gcnew System::EventHandler(this, &MyForm::buttonClosePanel_Click);
+			this->buttonClosePanel->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonClosePanel_MouseEnter);
+			this->buttonClosePanel->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonClosePanel_MouseLeave);
 			// 
 			// panelWindow
 			// 
@@ -319,7 +359,7 @@ namespace Eng {
 			this->panelWindow->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelWindow->Location = System::Drawing::Point(250, 100);
 			this->panelWindow->Name = L"panelWindow";
-			this->panelWindow->Size = System::Drawing::Size(1178, 849);
+			this->panelWindow->Size = System::Drawing::Size(1200, 900);
 			this->panelWindow->TabIndex = 3;
 			// 
 			// MyForm
@@ -327,11 +367,11 @@ namespace Eng {
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::White;
-			this->ClientSize = System::Drawing::Size(1428, 949);
+			this->ClientSize = System::Drawing::Size(1450, 1000);
 			this->Controls->Add(this->panelWindow);
 			this->Controls->Add(this->panelTop);
 			this->Controls->Add(this->panelMenu);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
@@ -344,33 +384,22 @@ namespace Eng {
 		}
 #pragma endregion
 		bool flagTap;
-		Void HomeOpen(System::Object^ sender, System::EventArgs^ e) {
-			Home^ H = gcnew Home();
-			H->Owner = this;
-			H->TopLevel = false;
-			H->Dock = DockStyle::Fill;
-			this->panelWindow->Controls->Add(H);
-			this->panelWindow->Tag = H;
-			H->BringToFront();
-			H->Show();
-		}
-		Void SongOpen(System::Object^ sender, System::EventArgs^ e) {
-			Song^ S = gcnew Song();
-			S->Owner = this;
-			S->TopLevel = false;
-			S->Dock = DockStyle::Fill;
-			this->panelWindow->Controls->Add(S);
-			this->panelWindow->Tag = S;
-			S->BringToFront();
-			S->Show();
-		}
-	
+	Void HomeOpen(System::Object^ sender, System::EventArgs^ e) {
+		Home^ H = gcnew Home();
+		H->Owner = this;
+		H->TopLevel = false;
+		H->Dock = DockStyle::Fill;
+		this->panelWindow->Controls->Add(H);
+		this->panelWindow->Tag = H;
+		H->BringToFront();
+		H->Show();
+		buttonClosePanel->Visible = false;
+	}
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		flagTap = false;
 		HomeOpen(sender, e);
-		labelStatus->Text = "Р”РћРњРђРЁРќРЇРЇ РЎРўР РђРќРР¦Рђ";
+		labelStatus->Text = "ДОМАШНЯЯ СТРАНИЦА";
 		buttonClosePanel->Visible = false;
-	
 	}
 	private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -468,22 +497,8 @@ private: System::Void buttonPastSimple_Click(System::Object^ sender, System::Eve
 }
 private: System::Void buttonClosePanel_Click(System::Object^ sender, System::EventArgs^ e) {
 	HomeOpen(sender, e);
-	labelStatus->Text = "Р”РћРњРђРЁРќРЇРЇ РЎРўР РђРќРР¦Рђ";
-	buttonClosePanel->Visible = false;
+	labelStatus->Text = "ДОМАШНЯЯ СТРАНИЦА";
 }
-
-	private: System::Void buttonSong_Click(System::Object^ sender, System::EventArgs^ e) {
-		buttonSong->BackColor = Color::FromArgb(104, 181, 211);
-		buttonSong->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
-		SongOpen(sender, e);
-		labelStatus->Text = "РџР•Р Р•Р’Р•Р”Р РџР•РЎРќР®";
-		if (flagTap) {
-			buttonVocab->Top -= 180; buttonSong->Top -= 180; buttonRatio->Top -= 180; buttonTest->Top -= 180;  buttonPastSimple->Visible = false; buttonFutSimple->Visible = false; buttonPrSimple->Visible = false; flagTap = false;
-		}
-		buttonClosePanel->Visible = true;
-	}
-	
-
 private: System::Void buttonPrSimple_Click(System::Object^ sender, System::EventArgs^ e) {
 	//buttonPrSimple->BackColor = Color::FromArgb(104, 181, 211);
 	//buttonPrSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
@@ -500,6 +515,30 @@ private: System::Void buttonPrSimple_Click(System::Object^ sender, System::Event
 }
 private: System::Void buttonFutSimple_Click(System::Object^ sender, System::EventArgs^ e) {
 	
+}
+private: System::Void buttonClose_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+private: System::Void buttonClose_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonClose->BackColor = Color::Red;
+}
+private: System::Void buttonClose_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonClose->BackColor = Color::Transparent;
+}
+private: System::Void buttonHide_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->WindowState = FormWindowState::Minimized;
+}
+private: System::Void buttonClosePanel_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonClosePanel->BackColor = Color::FromArgb(50, 52, 77);
+}
+private: System::Void buttonClosePanel_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonClosePanel->BackColor = Color::Transparent;
+}
+private: System::Void buttonHide_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonHide->BackColor = Color::FromArgb(50, 52, 77);
+}
+private: System::Void buttonHide_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonHide->BackColor = Color::Transparent;
 }
 };
 }
