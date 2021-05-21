@@ -308,6 +308,8 @@ namespace Eng {
 			this->buttonHide->TabIndex = 3;
 			this->buttonHide->UseVisualStyleBackColor = true;
 			this->buttonHide->Click += gcnew System::EventHandler(this, &MyForm::buttonHide_Click);
+			this->buttonHide->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonHide_MouseEnter);
+			this->buttonHide->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonHide_MouseLeave);
 			// 
 			// buttonClose
 			// 
@@ -339,13 +341,17 @@ namespace Eng {
 			// 
 			// buttonClosePanel
 			// 
-			this->buttonClosePanel->Location = System::Drawing::Point(21, 12);
+			this->buttonClosePanel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"buttonClosePanel.BackgroundImage")));
+			this->buttonClosePanel->FlatAppearance->BorderSize = 0;
+			this->buttonClosePanel->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonClosePanel->Location = System::Drawing::Point(16, 31);
 			this->buttonClosePanel->Name = L"buttonClosePanel";
-			this->buttonClosePanel->Size = System::Drawing::Size(74, 65);
+			this->buttonClosePanel->Size = System::Drawing::Size(35, 35);
 			this->buttonClosePanel->TabIndex = 0;
-			this->buttonClosePanel->Text = L"buttonClosePanel";
 			this->buttonClosePanel->UseVisualStyleBackColor = true;
 			this->buttonClosePanel->Click += gcnew System::EventHandler(this, &MyForm::buttonClosePanel_Click);
+			this->buttonClosePanel->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonClosePanel_MouseEnter);
+			this->buttonClosePanel->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonClosePanel_MouseLeave);
 			// 
 			// panelWindow
 			// 
@@ -521,6 +527,18 @@ private: System::Void buttonClose_MouseLeave(System::Object^ sender, System::Eve
 }
 private: System::Void buttonHide_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->WindowState = FormWindowState::Minimized;
+}
+private: System::Void buttonClosePanel_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonClosePanel->BackColor = Color::FromArgb(50, 52, 77);
+}
+private: System::Void buttonClosePanel_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonClosePanel->BackColor = Color::Transparent;
+}
+private: System::Void buttonHide_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	buttonHide->BackColor = Color::FromArgb(50, 52, 77);
+}
+private: System::Void buttonHide_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	buttonHide->BackColor = Color::Transparent;
 }
 };
 }
