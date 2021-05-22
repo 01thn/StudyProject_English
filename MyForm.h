@@ -2,7 +2,8 @@
 #include"Downlands.h"
 #include "Home.h"
 #include "MyForm1.h"
-#include "MyForm2.h"
+#include "present1.h"
+#include "future.h"
 #include"Song.h"
 
 namespace Eng {
@@ -36,6 +37,14 @@ namespace Eng {
 	private: System::Windows::Forms::Button^ buttonHide;
 
 	private: System::Windows::Forms::Button^ buttonClose;
+
+
+
+
+
+
+
+
 
 	public:
 	private: Downlands^ parentForm;
@@ -357,6 +366,7 @@ namespace Eng {
 			// 
 			// panelWindow
 			// 
+			this->panelWindow->AutoScroll = true;
 			this->panelWindow->BackColor = System::Drawing::Color::Transparent;
 			this->panelWindow->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelWindow->Location = System::Drawing::Point(250, 100);
@@ -513,9 +523,7 @@ private: System::Void buttonClosePanel_Click(System::Object^ sender, System::Eve
 	labelStatus->Text = "ÄÎÌÀØÍßß ÑÒÐÀÍÈÖÀ";
 }
 private: System::Void buttonPrSimple_Click(System::Object^ sender, System::EventArgs^ e) {
-	//buttonPrSimple->BackColor = Color::FromArgb(104, 181, 211);
-	//buttonPrSimple->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12.5f, FontStyle::Regular);
-	MyForm2^ K = gcnew MyForm2();
+	present1^ K = gcnew present1();
 	K->Owner = this;
 	K->TopLevel = false;
 	K->Dock = DockStyle::Fill;
@@ -527,7 +535,16 @@ private: System::Void buttonPrSimple_Click(System::Object^ sender, System::Event
 	buttonClosePanel->Visible = true;
 }
 private: System::Void buttonFutSimple_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	future^ K = gcnew future();
+	K->Owner = this;
+	K->TopLevel = false;
+	K->Dock = DockStyle::Fill;
+	this->panelWindow->Controls->Add(K);
+	this->panelWindow->Tag = K;
+	K->BringToFront();
+	K->Show();
+	labelStatus->Text = "FUTURE SIMPLE";
+	buttonClosePanel->Visible = true;
 }
 private: System::Void buttonClose_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();

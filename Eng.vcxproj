@@ -119,13 +119,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Downlands.cpp" />
+    <ClCompile Include="future.cpp" />
     <ClCompile Include="Home.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="present1.cpp" />
     <ClCompile Include="Song.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Downlands.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="future.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Home.h">
@@ -137,6 +142,9 @@
     <ClInclude Include="MyForm1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="present1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Song.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -144,6 +152,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Downlands.resx">
       <DependentUpon>Downlands.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="future.resx">
+      <DependentUpon>future.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.h</DependentUpon>
@@ -153,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm1.resx">
       <DependentUpon>MyForm1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="present1.resx">
+      <DependentUpon>present1.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Song.resx">
       <DependentUpon>Song.h</DependentUpon>
