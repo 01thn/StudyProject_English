@@ -558,5 +558,6 @@ private: System::Void buttonSong_Click(System::Object^ sender, System::EventArgs
 	labelStatus->Text = "оепебедх оеямч";
 	buttonClosePanel->Visible = true;
 }
+
 };
 }
