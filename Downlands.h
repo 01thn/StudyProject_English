@@ -66,12 +66,12 @@ namespace Eng {
 			this->label2->Cursor = System::Windows::Forms::Cursors::Hand;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 12, System::Drawing::FontStyle::Underline, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label2->ForeColor = System::Drawing::Color::Gainsboro;
+			this->label2->ForeColor = System::Drawing::Color::White;
 			this->label2->Location = System::Drawing::Point(393, 237);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(75, 24);
+			this->label2->Size = System::Drawing::Size(64, 24);
 			this->label2->TabIndex = 3;
-			this->label2->Text = L"Continue";
+			this->label2->Text = L"бвРав";
 			this->label2->UseMnemonic = false;
 			this->label2->Click += gcnew System::EventHandler(this, &Downlands::label2_Click);
 			this->label2->MouseEnter += gcnew System::EventHandler(this, &Downlands::label2_MouseEnter);
@@ -82,7 +82,7 @@ namespace Eng {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label1->ForeColor = System::Drawing::Color::Gainsboro;
+			this->label1->ForeColor = System::Drawing::Color::White;
 			this->label1->Location = System::Drawing::Point(90, 121);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(301, 29);

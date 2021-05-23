@@ -645,7 +645,7 @@ private: System::Void buttonHide_MouseLeave(System::Object^ sender, System::Even
 }
 private: System::Void buttonSong_Click(System::Object^ sender, System::EventArgs^ e) {
 	SongOpen();
-	labelStatus->Text = "ÀÓÄÈÐÎÂÀÍÈÅ";
+	labelStatus->Text = "       ÀÓÄÈÐÎÂÀÍÈÅ";
 	buttonClosePanel->Visible = true;
 }
 
@@ -656,7 +656,7 @@ private: System::Void buttonRatio_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void buttonTest_Click(System::Object^ sender, System::EventArgs^ e) {
 	testOpen();
-	labelStatus->Text = "ÒÅÑÒ";
+	labelStatus->Text = "        ÒÅÑÒ";
 	buttonClosePanel->Visible = true;
 }
 };
