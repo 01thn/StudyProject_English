@@ -56,6 +56,7 @@ namespace Eng {
 
 
 
+
 	protected:
 
 	protected:
@@ -227,6 +228,7 @@ namespace Eng {
 			this->panel2->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
+			this->Closed += gcnew System::EventHandler(this, &Song::Song_Closed);
 
 		}
 #pragma endregion
@@ -256,6 +258,7 @@ namespace Eng {
 	private: System::Void Song_Load(System::Object^ sender, System::EventArgs^ e) {
 		player = gcnew SoundPlayer();
 		player->SoundLocation = SongChange(id);
+		player->Load();
 		id++;
 	}
 
@@ -292,11 +295,15 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	buttonGrammar->Image = Image::FromFile("Media/старт.png");
 	flag = true;
 }
-
+private: System::Void Song_Closed(System::Object^ sender, System::EventArgs^ e) {
+	player->Stop();
+}
 
 private: System::Void panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void richTextBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void axWindowsMediaPlayer1_Enter(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

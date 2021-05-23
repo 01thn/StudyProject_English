@@ -33,7 +33,8 @@ namespace Eng {
 			InitializeComponent();
 			parentForm = parent;
 		}
-	private: System::Windows::Forms::Button^ buttonClosePanel;
+	public: System::Windows::Forms::Button^ buttonClosePanel;
+
 	private: System::Windows::Forms::Label^ labelStatus;
 	private: System::Windows::Forms::Button^ buttonHide;
 
