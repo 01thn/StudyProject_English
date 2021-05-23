@@ -145,9 +145,9 @@ namespace Eng {
 			// pictureBox2
 			// 
 			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
-			this->pictureBox2->Location = System::Drawing::Point(49, 552);
+			this->pictureBox2->Location = System::Drawing::Point(60, 552);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(260, 134);
+			this->pictureBox2->Size = System::Drawing::Size(270, 134);
 			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox2->TabIndex = 25;
 			this->pictureBox2->TabStop = false;
@@ -156,7 +156,7 @@ namespace Eng {
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Arial", 10));
-			this->label2->Location = System::Drawing::Point(57, 515);
+			this->label2->Location = System::Drawing::Point(78, 515);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(252, 19);
 			this->label2->TabIndex = 24;
@@ -307,7 +307,6 @@ namespace Eng {
 			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::White;
 			this->ClientSize = System::Drawing::Size(1200, 1102);
-
 			this->Controls->Add(this->pictureBox8);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->pictureBox7);

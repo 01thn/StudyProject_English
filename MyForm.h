@@ -1,10 +1,11 @@
 #pragma once
-#include"Downlands.h"
+#include "Downlands.h"
 #include "Home.h"
 #include "MyForm1.h"
 #include "present1.h"
 #include "future.h"
-#include"Song.h"
+#include "Song.h"
+#include "proposal.h"
 
 namespace Eng {
 
@@ -170,7 +171,7 @@ namespace Eng {
 			this->buttonGrammar->Name = L"buttonGrammar";
 			this->buttonGrammar->Size = System::Drawing::Size(250, 100);
 			this->buttonGrammar->TabIndex = 0;
-			this->buttonGrammar->Text = L"   Грамматика";
+			this->buttonGrammar->Text = L"   Времена";
 			this->buttonGrammar->UseVisualStyleBackColor = false;
 			this->buttonGrammar->Click += gcnew System::EventHandler(this, &MyForm::buttonGrammar_Click);
 			this->buttonGrammar->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonGrammar_MouseEnter);
@@ -208,7 +209,7 @@ namespace Eng {
 			this->buttonVocab->Name = L"buttonVocab";
 			this->buttonVocab->Size = System::Drawing::Size(250, 100);
 			this->buttonVocab->TabIndex = 2;
-			this->buttonVocab->Text = L"   Словарь";
+			this->buttonVocab->Text = L"   Предлоги";
 			this->buttonVocab->UseVisualStyleBackColor = false;
 			this->buttonVocab->Click += gcnew System::EventHandler(this, &MyForm::buttonVocab_Click);
 			this->buttonVocab->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonVocab_MouseEnter);
@@ -455,6 +456,16 @@ private: System::Void buttonVocab_MouseLeave(System::Object^ sender, System::Eve
 	buttonVocab->Font = gcnew System::Drawing::Font("Microsoft Sans Serif", 12, FontStyle::Regular);
 }
 private: System::Void buttonVocab_Click(System::Object^ sender, System::EventArgs^ e) {
+	proposal^ K = gcnew proposal();
+	K->Owner = this;
+	K->TopLevel = false;
+	K->Dock = DockStyle::Fill;
+	this->panelWindow->Controls->Add(K);
+	this->panelWindow->Tag = K;
+	K->BringToFront();
+	K->Show();
+	labelStatus->Text = "ПРЕДЛОГИ";
+	buttonClosePanel->Visible = true;
 }
 private: System::Void buttonSong_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	buttonSong->BackColor = Color::FromArgb(50, 52, 77);
@@ -519,6 +530,7 @@ private: System::Void buttonPastSimple_Click(System::Object^ sender, System::Eve
 	buttonClosePanel->Visible = true;
 }
 private: System::Void buttonClosePanel_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->panelWindow->Controls->Clear();
 	HomeOpen(sender, e);
 	labelStatus->Text = "ДОМАШНЯЯ СТРАНИЦА";
 }

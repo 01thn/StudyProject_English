@@ -36,6 +36,9 @@
     <ClCompile Include="future.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="proposal.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -57,6 +60,9 @@
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
     <ClInclude Include="future.h">
+      <Filter>Файлы ресурсов</Filter>
+    </ClInclude>
+    <ClInclude Include="proposal.h">
       <Filter>Файлы ресурсов</Filter>
     </ClInclude>
   </ItemGroup>

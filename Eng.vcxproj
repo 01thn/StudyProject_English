@@ -124,6 +124,7 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm1.cpp" />
     <ClCompile Include="present1.cpp" />
+    <ClCompile Include="proposal.cpp" />
     <ClCompile Include="Song.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -143,6 +144,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="present1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="proposal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Song.h">
@@ -167,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="present1.resx">
       <DependentUpon>present1.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="proposal.resx">
+      <DependentUpon>proposal.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Song.resx">
       <DependentUpon>Song.h</DependentUpon>
