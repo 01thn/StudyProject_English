@@ -107,6 +107,8 @@ namespace Eng {
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->panelMenu = (gcnew System::Windows::Forms::Panel());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->buttonTest = (gcnew System::Windows::Forms::Button());
 			this->buttonGrammar = (gcnew System::Windows::Forms::Button());
 			this->buttonRatio = (gcnew System::Windows::Forms::Button());
@@ -121,11 +123,9 @@ namespace Eng {
 			this->labelStatus = (gcnew System::Windows::Forms::Label());
 			this->buttonClosePanel = (gcnew System::Windows::Forms::Button());
 			this->panelWindow = (gcnew System::Windows::Forms::Panel());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panelMenu->SuspendLayout();
-			this->panelTop->SuspendLayout();
 			this->panel1->SuspendLayout();
+			this->panelTop->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panelMenu
@@ -147,6 +147,29 @@ namespace Eng {
 			this->panelMenu->Size = System::Drawing::Size(250, 1000);
 			this->panelMenu->TabIndex = 0;
 			this->panelMenu->MouseHover += gcnew System::EventHandler(this, &MyForm::panel1_MouseHover);
+			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(139)),
+				static_cast<System::Int32>(static_cast<System::Byte>(163)));
+			this->panel1->Controls->Add(this->label1);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(250, 100);
+			this->panel1->TabIndex = 9;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label1->ForeColor = System::Drawing::Color::Gainsboro;
+			this->label1->Location = System::Drawing::Point(40, 36);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(171, 29);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"ENGlish Simulator";
 			// 
 			// buttonTest
 			// 
@@ -202,7 +225,6 @@ namespace Eng {
 			this->buttonRatio->TabIndex = 7;
 			this->buttonRatio->Text = L"   Ïàçë";
 			this->buttonRatio->UseVisualStyleBackColor = false;
-			this->buttonRatio->Click += gcnew System::EventHandler(this, &MyForm::buttonRatio_Click);
 			this->buttonRatio->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseEnter);
 			this->buttonRatio->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseLeave);
 			// 
@@ -386,29 +408,6 @@ namespace Eng {
 			this->panelWindow->Size = System::Drawing::Size(1200, 900);
 			this->panelWindow->TabIndex = 3;
 			// 
-			// panel1
-			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(139)),
-				static_cast<System::Int32>(static_cast<System::Byte>(163)));
-			this->panel1->Controls->Add(this->label1);
-			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panel1->Location = System::Drawing::Point(0, 0);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(250, 100);
-			this->panel1->TabIndex = 9;
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label1->ForeColor = System::Drawing::Color::Gainsboro;
-			this->label1->Location = System::Drawing::Point(40, 36);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(171, 29);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"ENGlish Simulator";
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -419,15 +418,16 @@ namespace Eng {
 			this->Controls->Add(this->panelTop);
 			this->Controls->Add(this->panelMenu);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->panelMenu->ResumeLayout(false);
-			this->panelTop->ResumeLayout(false);
-			this->panelTop->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
+			this->panelTop->ResumeLayout(false);
+			this->panelTop->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -633,7 +633,7 @@ private: System::Void buttonHide_MouseLeave(System::Object^ sender, System::Even
 }
 private: System::Void buttonSong_Click(System::Object^ sender, System::EventArgs^ e) {
 	SongOpen();
-	labelStatus->Text = "ÏÅÐÅÂÅÑÒÈ ÏÅÑÍÞ";
+	labelStatus->Text = "ÀÓÄÈÐÎÂÀÍÈÅ";
 	buttonClosePanel->Visible = true;
 }
 
