@@ -226,6 +226,7 @@ namespace Eng {
 			this->buttonRatio->TabIndex = 7;
 			this->buttonRatio->Text = L"   Ïàçë";
 			this->buttonRatio->UseVisualStyleBackColor = false;
+			this->buttonRatio->Click += gcnew System::EventHandler(this, &MyForm::buttonRatio_Click);
 			this->buttonRatio->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseEnter);
 			this->buttonRatio->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseLeave);
 			// 
@@ -659,5 +660,6 @@ private: System::Void buttonTest_Click(System::Object^ sender, System::EventArgs
 	labelStatus->Text = "        ÒÅÑÒ";
 	buttonClosePanel->Visible = true;
 }
+
 };
 }
