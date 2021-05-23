@@ -6,6 +6,7 @@
 #include "future.h"
 #include "Song.h"
 #include "proposal.h"
+#include "Test.h"
 
 namespace Eng {
 
@@ -353,7 +354,7 @@ namespace Eng {
 			this->labelStatus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->labelStatus->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->labelStatus->Location = System::Drawing::Point(357, 37);
+			this->labelStatus->Location = System::Drawing::Point(456, 37);
 			this->labelStatus->Name = L"labelStatus";
 			this->labelStatus->Size = System::Drawing::Size(288, 29);
 			this->labelStatus->TabIndex = 1;
@@ -446,6 +447,17 @@ namespace Eng {
 	}
 	Void SongOpen() {
 		Song^ H = gcnew Song();
+		H->Owner = this;
+		H->TopLevel = false;
+		H->Dock = DockStyle::Fill;
+		this->panelWindow->Controls->Add(H);
+		this->panelWindow->Tag = H;
+		H->BringToFront();
+		H->Show();
+		buttonClosePanel->Visible = false;
+	}
+	Void testOpen() {
+		Test^ H = gcnew Test();
 		H->Owner = this;
 		H->TopLevel = false;
 		H->Dock = DockStyle::Fill;
@@ -625,5 +637,10 @@ private: System::Void buttonSong_Click(System::Object^ sender, System::EventArgs
 	buttonClosePanel->Visible = true;
 }
 
+private: System::Void buttonTest_Click(System::Object^ sender, System::EventArgs^ e) {
+	testOpen();
+	labelStatus->Text = "реяр";
+	buttonClosePanel->Visible = true;
+}
 };
 }
