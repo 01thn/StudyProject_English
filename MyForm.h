@@ -6,11 +6,6 @@
 #include "future.h"
 #include "Song.h"
 #include "proposal.h"
-<<<<<<< HEAD
-#include "puzzle.h"
-=======
-#include "Test.h"
->>>>>>> e8a03303a9faf3bcb87708e44b5530e482030e6e
 
 namespace Eng {
 
@@ -358,11 +353,7 @@ namespace Eng {
 			this->labelStatus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->labelStatus->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-<<<<<<< HEAD
-			this->labelStatus->Location = System::Drawing::Point(452, 37);
-=======
-			this->labelStatus->Location = System::Drawing::Point(456, 37);
->>>>>>> e8a03303a9faf3bcb87708e44b5530e482030e6e
+			this->labelStatus->Location = System::Drawing::Point(357, 37);
 			this->labelStatus->Name = L"labelStatus";
 			this->labelStatus->Size = System::Drawing::Size(288, 29);
 			this->labelStatus->TabIndex = 1;
@@ -455,22 +446,6 @@ namespace Eng {
 	}
 	Void SongOpen() {
 		Song^ H = gcnew Song();
-		H->Owner = this;
-		H->TopLevel = false;
-		H->Dock = DockStyle::Fill;
-		this->panelWindow->Controls->Add(H);
-		this->panelWindow->Tag = H;
-		H->BringToFront();
-		H->Show();
-		buttonClosePanel->Visible = false;
-	}
-<<<<<<< HEAD
-	Void puzzleOpen() {
-		puzzle^ H = gcnew puzzle();
-=======
-	Void testOpen() {
-		Test^ H = gcnew Test();
->>>>>>> e8a03303a9faf3bcb87708e44b5530e482030e6e
 		H->Owner = this;
 		H->TopLevel = false;
 		H->Dock = DockStyle::Fill;
@@ -650,16 +625,5 @@ private: System::Void buttonSong_Click(System::Object^ sender, System::EventArgs
 	buttonClosePanel->Visible = true;
 }
 
-<<<<<<< HEAD
-private: System::Void buttonRatio_Click(System::Object^ sender, System::EventArgs^ e) {
-	puzzleOpen();
-	labelStatus->Text = "яннрмеярх якнбю";
-=======
-private: System::Void buttonTest_Click(System::Object^ sender, System::EventArgs^ e) {
-	testOpen();
-	labelStatus->Text = "реяр";
->>>>>>> e8a03303a9faf3bcb87708e44b5530e482030e6e
-	buttonClosePanel->Visible = true;
-}
 };
 }
