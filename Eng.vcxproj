@@ -125,8 +125,8 @@
     <ClCompile Include="MyForm1.cpp" />
     <ClCompile Include="present1.cpp" />
     <ClCompile Include="proposal.cpp" />
-    <ClCompile Include="puzzle.cpp" />
     <ClCompile Include="Song.cpp" />
+    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Downlands.h">
@@ -150,10 +150,11 @@
     <ClInclude Include="proposal.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="puzzle.h">
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Song.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="Song.h">
+    <ClInclude Include="Test.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -179,11 +180,11 @@
     <EmbeddedResource Include="proposal.resx">
       <DependentUpon>proposal.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="puzzle.resx">
-      <DependentUpon>puzzle.h</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Song.resx">
       <DependentUpon>Song.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -203,6 +204,12 @@
       <Lcid>0</Lcid>
       <Isolated>false</Isolated>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Eng.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Media\1.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
