@@ -6,6 +6,7 @@
 #include "future.h"
 #include "Song.h"
 #include "proposal.h"
+#include "Test.h"
 
 namespace Eng {
 
@@ -39,6 +40,8 @@ namespace Eng {
 	private: System::Windows::Forms::Button^ buttonHide;
 
 	private: System::Windows::Forms::Button^ buttonClose;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Label^ label1;
 
 
 
@@ -118,14 +121,18 @@ namespace Eng {
 			this->labelStatus = (gcnew System::Windows::Forms::Label());
 			this->buttonClosePanel = (gcnew System::Windows::Forms::Button());
 			this->panelWindow = (gcnew System::Windows::Forms::Panel());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panelMenu->SuspendLayout();
 			this->panelTop->SuspendLayout();
+			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panelMenu
 			// 
 			this->panelMenu->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(50)), static_cast<System::Int32>(static_cast<System::Byte>(52)),
 				static_cast<System::Int32>(static_cast<System::Byte>(77)));
+			this->panelMenu->Controls->Add(this->panel1);
 			this->panelMenu->Controls->Add(this->buttonTest);
 			this->panelMenu->Controls->Add(this->buttonGrammar);
 			this->panelMenu->Controls->Add(this->buttonRatio);
@@ -156,6 +163,7 @@ namespace Eng {
 			this->buttonTest->TabIndex = 8;
 			this->buttonTest->Text = L"   Òåñò";
 			this->buttonTest->UseVisualStyleBackColor = false;
+			this->buttonTest->Click += gcnew System::EventHandler(this, &MyForm::buttonTest_Click);
 			this->buttonTest->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonTest_MouseEnter);
 			this->buttonTest->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonTest_MouseLeave);
 			// 
@@ -345,7 +353,7 @@ namespace Eng {
 			this->labelStatus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->labelStatus->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->labelStatus->Location = System::Drawing::Point(357, 37);
+			this->labelStatus->Location = System::Drawing::Point(456, 37);
 			this->labelStatus->Name = L"labelStatus";
 			this->labelStatus->Size = System::Drawing::Size(288, 29);
 			this->labelStatus->TabIndex = 1;
@@ -376,6 +384,29 @@ namespace Eng {
 			this->panelWindow->Size = System::Drawing::Size(1200, 900);
 			this->panelWindow->TabIndex = 3;
 			// 
+			// panel1
+			// 
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(139)),
+				static_cast<System::Int32>(static_cast<System::Byte>(163)));
+			this->panel1->Controls->Add(this->label1);
+			this->panel1->Dock = System::Windows::Forms::DockStyle::Top;
+			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(250, 100);
+			this->panel1->TabIndex = 9;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Arial Narrow", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label1->ForeColor = System::Drawing::Color::Gainsboro;
+			this->label1->Location = System::Drawing::Point(40, 36);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(171, 29);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"ENGlish Simulator";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -393,10 +424,13 @@ namespace Eng {
 			this->panelMenu->ResumeLayout(false);
 			this->panelTop->ResumeLayout(false);
 			this->panelTop->PerformLayout();
+			this->panel1->ResumeLayout(false);
+			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+		Void SongClose();
 		bool flagTap;
 	Void HomeOpen(System::Object^ sender, System::EventArgs^ e) {
 		Home^ H = gcnew Home();
@@ -411,6 +445,17 @@ namespace Eng {
 	}
 	Void SongOpen() {
 		Song^ H = gcnew Song();
+		H->Owner = this;
+		H->TopLevel = false;
+		H->Dock = DockStyle::Fill;
+		this->panelWindow->Controls->Add(H);
+		this->panelWindow->Tag = H;
+		H->BringToFront();
+		H->Show();
+		buttonClosePanel->Visible = false;
+	}
+	Void testOpen() {
+		Test^ H = gcnew Test();
 		H->Owner = this;
 		H->TopLevel = false;
 		H->Dock = DockStyle::Fill;
@@ -531,6 +576,7 @@ private: System::Void buttonPastSimple_Click(System::Object^ sender, System::Eve
 	buttonClosePanel->Visible = true;
 }
 private: System::Void buttonClosePanel_Click(System::Object^ sender, System::EventArgs^ e) {
+	SongClose();
 	this->panelWindow->Controls->Clear();
 	HomeOpen(sender, e);
 	labelStatus->Text = "ÄÎÌÀØÍßß ÑÒÐÀÍÈÖÀ";
@@ -589,5 +635,10 @@ private: System::Void buttonSong_Click(System::Object^ sender, System::EventArgs
 	buttonClosePanel->Visible = true;
 }
 
+private: System::Void buttonTest_Click(System::Object^ sender, System::EventArgs^ e) {
+	testOpen();
+	labelStatus->Text = "ÒÅÑÒ";
+	buttonClosePanel->Visible = true;
+}
 };
 }

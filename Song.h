@@ -90,8 +90,8 @@ namespace Eng {
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(50)), static_cast<System::Int32>(static_cast<System::Byte>(52)),
-				static_cast<System::Int32>(static_cast<System::Byte>(77)));
+			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(79)), static_cast<System::Int32>(static_cast<System::Byte>(139)),
+				static_cast<System::Int32>(static_cast<System::Byte>(163)));
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->button3);
 			this->panel1->Controls->Add(this->button2);
@@ -221,14 +221,13 @@ namespace Eng {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Song";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Song";
+			this->Closed += gcnew System::EventHandler(this, &Song::Song_Closed);
 			this->Load += gcnew System::EventHandler(this, &Song::Song_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
-			this->Closed += gcnew System::EventHandler(this, &Song::Song_Closed);
 
 		}
 #pragma endregion
@@ -276,7 +275,9 @@ private: System::Void buttonGrammar_Click(System::Object^ sender, System::EventA
 	}
 	
 }
-
+public:Void playerStop() {
+	player->Stop();
+}
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
