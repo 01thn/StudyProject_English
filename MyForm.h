@@ -6,6 +6,7 @@
 #include "future.h"
 #include "Song.h"
 #include "proposal.h"
+#include "puzzle.h"
 
 namespace Eng {
 
@@ -192,8 +193,9 @@ namespace Eng {
 			this->buttonRatio->Name = L"buttonRatio";
 			this->buttonRatio->Size = System::Drawing::Size(250, 100);
 			this->buttonRatio->TabIndex = 7;
-			this->buttonRatio->Text = L"   Ñîîòí";
+			this->buttonRatio->Text = L"   Ïàçë";
 			this->buttonRatio->UseVisualStyleBackColor = false;
+			this->buttonRatio->Click += gcnew System::EventHandler(this, &MyForm::buttonRatio_Click);
 			this->buttonRatio->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseEnter);
 			this->buttonRatio->MouseLeave += gcnew System::EventHandler(this, &MyForm::buttonRatio_MouseLeave);
 			// 
@@ -229,7 +231,7 @@ namespace Eng {
 			this->buttonSong->Name = L"buttonSong";
 			this->buttonSong->Size = System::Drawing::Size(250, 100);
 			this->buttonSong->TabIndex = 6;
-			this->buttonSong->Text = L"   Ïåñíÿ";
+			this->buttonSong->Text = L"     Àóäèðîâàíèå";
 			this->buttonSong->UseVisualStyleBackColor = false;
 			this->buttonSong->Click += gcnew System::EventHandler(this, &MyForm::buttonSong_Click);
 			this->buttonSong->MouseEnter += gcnew System::EventHandler(this, &MyForm::buttonSong_MouseEnter);
@@ -345,7 +347,7 @@ namespace Eng {
 			this->labelStatus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->labelStatus->ForeColor = System::Drawing::SystemColors::ControlLightLight;
-			this->labelStatus->Location = System::Drawing::Point(357, 37);
+			this->labelStatus->Location = System::Drawing::Point(452, 37);
 			this->labelStatus->Name = L"labelStatus";
 			this->labelStatus->Size = System::Drawing::Size(288, 29);
 			this->labelStatus->TabIndex = 1;
@@ -370,6 +372,7 @@ namespace Eng {
 			// 
 			this->panelWindow->AutoScroll = true;
 			this->panelWindow->BackColor = System::Drawing::Color::Transparent;
+			this->panelWindow->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->panelWindow->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panelWindow->Location = System::Drawing::Point(250, 100);
 			this->panelWindow->Name = L"panelWindow";
@@ -411,6 +414,17 @@ namespace Eng {
 	}
 	Void SongOpen() {
 		Song^ H = gcnew Song();
+		H->Owner = this;
+		H->TopLevel = false;
+		H->Dock = DockStyle::Fill;
+		this->panelWindow->Controls->Add(H);
+		this->panelWindow->Tag = H;
+		H->BringToFront();
+		H->Show();
+		buttonClosePanel->Visible = false;
+	}
+	Void puzzleOpen() {
+		puzzle^ H = gcnew puzzle();
 		H->Owner = this;
 		H->TopLevel = false;
 		H->Dock = DockStyle::Fill;
@@ -465,7 +479,7 @@ private: System::Void buttonVocab_Click(System::Object^ sender, System::EventArg
 	this->panelWindow->Tag = K;
 	K->BringToFront();
 	K->Show();
-	labelStatus->Text = "ÏÐÅÄËÎÃÈ";
+	labelStatus->Text = "        ÏÐÅÄËÎÃÈ";
 	buttonClosePanel->Visible = true;
 }
 private: System::Void buttonSong_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
@@ -527,7 +541,7 @@ private: System::Void buttonPastSimple_Click(System::Object^ sender, System::Eve
 	this->panelWindow->Tag = J;
 	J->BringToFront();
 	J->Show();
-	labelStatus->Text = "PAST SIMPLE";
+	labelStatus->Text = "    PAST SIMPLE";
 	buttonClosePanel->Visible = true;
 }
 private: System::Void buttonClosePanel_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -544,7 +558,7 @@ private: System::Void buttonPrSimple_Click(System::Object^ sender, System::Event
 	this->panelWindow->Tag = K;
 	K->BringToFront();
 	K->Show();
-	labelStatus->Text = "PRESENT SIMPLE";
+	labelStatus->Text = "    PRESENT SIMPLE";
 	buttonClosePanel->Visible = true;
 }
 private: System::Void buttonFutSimple_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -556,7 +570,7 @@ private: System::Void buttonFutSimple_Click(System::Object^ sender, System::Even
 	this->panelWindow->Tag = K;
 	K->BringToFront();
 	K->Show();
-	labelStatus->Text = "FUTURE SIMPLE";
+	labelStatus->Text = "    FUTURE SIMPLE";
 	buttonClosePanel->Visible = true;
 }
 private: System::Void buttonClose_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -585,9 +599,14 @@ private: System::Void buttonHide_MouseLeave(System::Object^ sender, System::Even
 }
 private: System::Void buttonSong_Click(System::Object^ sender, System::EventArgs^ e) {
 	SongOpen();
-	labelStatus->Text = "ÏÅÐÅÂÅÄÈ ÏÅÑÍÞ";
+	labelStatus->Text = "ÏÅÐÅÂÅÑÒÈ ÏÅÑÍÞ";
 	buttonClosePanel->Visible = true;
 }
 
+private: System::Void buttonRatio_Click(System::Object^ sender, System::EventArgs^ e) {
+	puzzleOpen();
+	labelStatus->Text = "ÑÎÎÒÍÅÑÒÈ ÑËÎÂÀ";
+	buttonClosePanel->Visible = true;
+}
 };
 }
